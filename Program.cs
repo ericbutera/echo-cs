@@ -15,6 +15,7 @@ public class Echo
                     var req = context.Request;
                     var res = context.Response;
 
+                    Write(res.Body, "TIME: " + DateTime.Now);
                     Write(res.Body, req.Method + " " + req.Path + "\n");
 
                     var headers = req.Headers.Select(h => h.Key + ": " + h.Value);
